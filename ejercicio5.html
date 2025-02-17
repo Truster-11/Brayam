@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Marcos</title>
+</head>
+<frameset cols="30%, 70%">
+    <frame src="menu.html" name="izquierda">
+    <frame src="inicio.html" name="derecha">
+</frameset>
+</html>
+
+<!-- menu.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú</title>
+</head>
+<body>
+    <h2>Menú</h2>
+    <ul>
+        <li><a href="nombreapellido.html" target="derecha">El Autor</a></li>
+        <li><a href="encuesta.html" target="derecha">Encuesta</a></li>
+    </ul>
+</body>
+</html>
+
+<!-- encuesta.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta</title>
+</head>
+<body>
+    <h2>Encuesta</h2>
+    <form action="mailto:correo@ejemplo.com" method="post" enctype="text/plain">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="opinion">Opinión:</label><br>
+        <textarea id="opinion" name="opinion" rows="4" cols="30" required></textarea><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
