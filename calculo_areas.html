@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Áreas</title>
+</head>
+<body>
+    <h2>Autor: Juan Pérez</h2>
+    <h3>Cálculo de Áreas</h3>
+    <script>
+        // Función para calcular el área de un cuadrado
+        function cuadrado(l) {
+            return l * l;
+        }
+
+        // Función para calcular el área de un rectángulo
+        function rectangulo(l1, l2) {
+            return l1 * l2;
+        }
+
+        // Función para calcular el área de un triángulo
+        function triangulo(b, h) {
+            return (b * h) / 2;
+        }
+
+        // Valores de prueba
+        let ladoCuadrado = 5;
+        let baseTriangulo = 20, alturaTriangulo = 10;
+        let largoRectangulo = 8, anchoRectangulo = 4;
+        
+        // Mostrar resultados en la página
+        document.write("Área del cuadrado con lado " + ladoCuadrado + " cm = " + cuadrado(ladoCuadrado) + " cm².<br>");
+        document.write("Área del rectángulo de " + largoRectangulo + " cm x " + anchoRectangulo + " cm = " + rectangulo(largoRectangulo, anchoRectangulo) + " cm².<br>");
+        document.write("Área del triángulo de base " + baseTriangulo + " cm y altura " + alturaTriangulo + " cm = " + triangulo(baseTriangulo, alturaTriangulo) + " cm².<br>");
+    </script>
+</body>
+</html>
