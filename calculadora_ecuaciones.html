@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Ecuaciones Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    input, select, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #006600;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Ecuaciones Simples</h1>
+  <div class="container">
+    <label for="tipo">Tipo de ecuación:</label>
+    <select id="tipo">
+      <option value="suma">x + a = b</option>
+      <option value="resta">x - a = b</option>
+      <option value="multiplicacion">a * x = b</option>
+      <option value="division">x / a = b</option>
+    </select>
+
+    <label for="a">Valor de a:</label>
+    <input type="number" id="a" placeholder="Ingresa a">
+
+    <label for="b">Valor de b:</label>
+    <input type="number" id="b" placeholder="Ingresa b">
+
+    <button onclick="resolverEcuacion()">Resolver</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function resolverEcuacion() {
+      const tipo = document.getElementById("tipo").value;
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      let resultado = "";
+
+      if (isNaN(a) || isNaN(b)) {
+        resultado = "Por favor ingresa valores numéricos válidos.";
+      } else {
+        switch(tipo) {
+          case "suma":
+            resultado = `x + ${a} = ${b} → x = ${b - a}`;
+            break;
+          case "resta":
+            resultado = `x - ${a} = ${b} → x = ${b + a}`;
+            break;
+          case "multiplicacion":
+            resultado = `${a}x = ${b} → x = ${b / a}`;
+            break;
+          case "division":
+            resultado = `x / ${a} = ${b} → x = ${a * b}`;
+            break;
+        }
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>
